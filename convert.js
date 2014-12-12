@@ -1,3 +1,4 @@
+/* originally written by exebook@gmail.com */
 var states = {
 	bold: 98,italic: 105,underline: 117,strike: 111,
 	redline: 82,hilite1: 49,hilite2: 50,extra: 120,
