@@ -170,7 +170,6 @@ TibetDocParse = function (D) {
 		if (encoding == 'AnsiTibetan') mode = 0x10
 		if (encoding == 'TibetanAnsi') mode = 0x11
 		if (mode == 0) return 'Unknown encoding'
-		
 		for (var i = 0; i < s.length; i++) {
 			var fontChanged = false
 			var c = s.charCodeAt(i)
@@ -179,7 +178,7 @@ TibetDocParse = function (D) {
 			else if (c < 0x10) console.log('unkonw prefix:', c)
 			else if (c <= 0x15) add_text(lookup(c, s.charCodeAt(++i)))
 			else if (c == 0x20) add_text(' ')
-			else if (c <= 0x21) processFormat()
+			else if (c < 0x21) processFormat()
 			else add_text(lookup(mode, c))
 		}
 		return R
